@@ -40,7 +40,7 @@ Use the PowerShell DSC extension to create a SharePoint 2013 farm that includes 
 
 -	One VM configured as a one machine SharePoint 2013 farm
 
-## Deploy AD/SQL (non-high availability)
+## Deploy AD
 
 Use the PowerShell DSC extension to create an AD domain controller server that includes the following:
 

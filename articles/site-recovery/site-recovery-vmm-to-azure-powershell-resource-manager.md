@@ -217,21 +217,18 @@ and install it on each Hyper-V host server located in the VMM clouds you want to
 
 		$associationJob  = Start-AzureRmSiteRecoveryPolicyAssociationJob -Policy     $Policy -PrimaryProtectionContainer $protectionContainer  
 
-5.	After the job has finished, run the following command:
-   
-		$job = Get-AzureRmSiteRecoveryJob -Job $associationJob
-   		if($job -eq $null -or $job.StateDescription -ne "Completed")
-   		 {
-        $isJobLeftForProcessing = $true;
-    	}
+# Error in script. Rewrote as follows:
+do{
+sleep -Seconds 5
 
-6.	After the job has finished processing, run the following command:
+if($associationJob){
+$job = Get-AzureRmSiteRecoveryJob -Job $associationJob
+}
+else {write-output 'Associationjob is empty'}
 
-		if($isJobLeftForProcessing)
-    	{
-    	Start-Sleep -Seconds 60
-    	}
-        }While($isJobLeftForProcessing)
+write-output $job.StateDescription
+}while ($job.StateDescription -ne "Completed")
+
 
 To check the completion of the operation, follow the steps in [Monitor Activity](#monitor).
 

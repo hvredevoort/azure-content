@@ -137,7 +137,7 @@ To learn about tips that can help you use the cmdlets, such as how parameter val
 
 1.  Set the vault context by running the below command.
 
-		Set-AzureRmSiteRecoveryVaultSettings -ARSVault $vault
+		Set-AzureRmSiteRecoveryVaultSettings -ASRVault $vault
 
 ## Step 4: Install the Azure Site Recovery Provider
 

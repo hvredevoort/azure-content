@@ -212,6 +212,8 @@ and install it on each Hyper-V host server located in the VMM clouds you want to
 3.	Get the policy details to a variable using the job that was created and mentioning the friendly policy name:
 
 		$policy = Get-AzureRmSiteRecoveryPolicy -FriendlyName $policyname
+		# $policyname variable has value of replicapolicy but should have the friendlyname shown in Get-AzureRmSiteRecoveryPolicy
+
 
 4.	Start the association of the protection container with the replication policy:
 
